@@ -3,7 +3,7 @@ package com.jeanbarcellos.project106.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.exception.ValidationException;
 import com.jeanbarcellos.core.validation.Validate;
 import com.jeanbarcellos.core.validation.Validator;
@@ -177,7 +177,7 @@ public class PostService {
 
         if (comment == null) {
             throw new NotFoundException(
-                    String.format(Constants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_COMENTARIO_NAME, commentId));
+                    String.format(MessageConstants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_COMENTARIO_NAME, commentId));
         }
 
         return comment;
@@ -186,12 +186,12 @@ public class PostService {
     private void validate(PostRequest request) {
         if (!this.categoryRepository.existsById(request.getCategoryId())) {
             throw new NotFoundException(
-                    String.format(Constants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_CATEGORIA_NAME, request.getCategoryId()));
+                    String.format(MessageConstants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_CATEGORIA_NAME, request.getCategoryId()));
         }
 
         if (!this.personRepository.existsById(request.getAuthorId())) {
             throw new NotFoundException(
-                    String.format(Constants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_PESSOA_NAME, request.getAuthorId()));
+                    String.format(MessageConstants.MSG_ERROR_ENTITY_NOT_FOUND, MSG_PESSOA_NAME, request.getAuthorId()));
         }
     }
 
@@ -210,7 +210,7 @@ public class PostService {
         }
 
         if (!errors.isEmpty()) {
-            throw new ValidationException(Constants.MSG_ERROR_VALIDATION, errors);
+            throw new ValidationException(MessageConstants.MSG_ERROR_VALIDATION, errors);
         }
     }
 

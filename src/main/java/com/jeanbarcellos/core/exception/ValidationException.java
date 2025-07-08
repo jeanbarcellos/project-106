@@ -6,6 +6,11 @@ import java.util.List;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Validation Exception
+ *
+ * @author Jean Silva de Barcellos (jeanbarcellos@hotmail.com)
+ */
 public class ValidationException extends ApplicationException {
 
     public static final String ERRORS_PREFIX = "Erros=";

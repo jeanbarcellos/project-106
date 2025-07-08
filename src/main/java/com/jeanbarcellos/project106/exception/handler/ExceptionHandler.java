@@ -1,6 +1,6 @@
 package com.jeanbarcellos.project106.exception.handler;
 
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 
 import jakarta.ws.rs.core.Response;
@@ -18,7 +18,7 @@ public class ExceptionHandler implements ExceptionMapper<Exception> {
 
         return Response
                 .status(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode())
-                .entity(new ErrorResponse(Constants.MSG_ERROR_SERVICE))
+                .entity(new ErrorResponse(MessageConstants.MSG_ERROR_SERVICE))
                 .build();
     }
 

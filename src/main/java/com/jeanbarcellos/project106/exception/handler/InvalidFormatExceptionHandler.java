@@ -7,7 +7,7 @@ import org.apache.commons.lang3.ObjectUtils;
 
 import com.fasterxml.jackson.databind.JsonMappingException.Reference;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 import com.jeanbarcellos.core.validation.Validator;
 
@@ -26,9 +26,9 @@ public class InvalidFormatExceptionHandler implements ExceptionMapper<InvalidFor
     public Response toResponse(InvalidFormatException exception) {
         log.error(exception.getMessage(), exception);
 
-        var message = Constants.MSG_ERROR_REQUEST;
+        var message = MessageConstants.MSG_ERROR_REQUEST;
         var erro = String.format(Validator.MSG_ERROR, getNestedFieldName(exception.getPath()),
-                Constants.ERROR_VALIDATION_JSON_INVALID_FORMAT);
+                MessageConstants.ERROR_VALIDATION_JSON_INVALID_FORMAT);
 
         return Response
                 .status(Response.Status.BAD_REQUEST.getStatusCode())

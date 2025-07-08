@@ -2,7 +2,7 @@ package com.jeanbarcellos.project106.services;
 
 import java.util.List;
 
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.exception.ValidationException;
 import com.jeanbarcellos.core.validation.Validate;
 import com.jeanbarcellos.core.validation.Validator;
@@ -86,7 +86,7 @@ public class PersonService {
 
     private void validateExistsByCpf(String cpf) {
         if (this.repository.existsByCpf(cpf)) {
-            throw new ValidationException(Constants.MSG_ERROR_VALIDATION,
+            throw new ValidationException(MessageConstants.MSG_ERROR_VALIDATION,
                     String.format(MSG_ERROR_PERSON_CPF_EXISTS, cpf));
         }
     }

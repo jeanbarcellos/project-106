@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.exception.ValidationException;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -32,7 +32,7 @@ public class Validator {
     }
 
     public static <T> ValidationException createValidationException(Set<ConstraintViolation<T>> constraints) {
-        return ValidationException.of(Constants.MSG_ERROR_VALIDATION, createMessages(constraints));
+        return ValidationException.of(MessageConstants.MSG_ERROR_VALIDATION, createMessages(constraints));
     }
 
     public static <T> List<String> createMessages(Set<ConstraintViolation<T>> constraints) {

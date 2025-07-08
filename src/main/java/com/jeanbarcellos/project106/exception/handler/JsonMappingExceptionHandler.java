@@ -3,7 +3,7 @@ package com.jeanbarcellos.project106.exception.handler;
 import java.util.Arrays;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 
 import jakarta.ws.rs.core.Response;
@@ -28,7 +28,7 @@ public class JsonMappingExceptionHandler implements ExceptionMapper<JsonMappingE
         return Response
                 .status(Response.Status.BAD_REQUEST.getStatusCode())
                 .entity(ErrorResponse.of(
-                        Constants.MSG_ERROR_REQUEST,
+                        MessageConstants.MSG_ERROR_REQUEST,
                         Arrays.asList(error)))
                 .build();
     }

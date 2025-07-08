@@ -46,7 +46,7 @@ public class Category implements IEntity, IAggregateRoot {
     private String name;
 
     @Column(name = "description", nullable = false)
-    protected String description;
+    private String description;
 
     // -----
 

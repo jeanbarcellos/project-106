@@ -1,6 +1,6 @@
 package com.jeanbarcellos.project106.exception.handler;
 
-import com.jeanbarcellos.core.Constants;
+import com.jeanbarcellos.core.constants.MessageConstants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 
 import jakarta.ws.rs.NotFoundException;
@@ -27,7 +27,7 @@ public class NotFoundExceptionHandler implements ExceptionMapper<NotFoundExcepti
 
     private String prepareMessageFinal(NotFoundException exception) {
         return exception.getMessage().contains(RESTEASY_MESSAGE_PREFIX)
-                ? Constants.MSG_ERROR_NOT_FOUND
+                ? MessageConstants.MSG_ERROR_NOT_FOUND
                 : exception.getMessage();
     }
 
