@@ -81,14 +81,13 @@ this.comments.stream()
 
 ## Query
 
-````java
-TypedQuery<T> query = this.getEntityManager().createQuery(String qlString, Class<T> resultClass)
 ```java
+TypedQuery<T> query = this.getEntityManager().createQuery(String qlString, Class<T> resultClass)
+```
 
 https://stackoverflow.com/questions/2002993/jpa-getsingleresult-or-null
-````
 
-## Jackarta Exceptions
+## Jakarta Exceptions
 
 `javax.persistence.PersistenceException`
 
