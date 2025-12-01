@@ -6,7 +6,7 @@
 
 ## Transação
 
-@Transactional
+`@Transactional`
 
 JTA: Java Transactional API
 
@@ -28,19 +28,19 @@ https://stackoverflow.com/questions/18129300/get-parameter-value-if-parameter-an
 
 https://github.com/quarkusio/quarkus/blob/main/extensions/hibernate-validator/runtime/src/main/java/io/quarkus/hibernate/validator/runtime/interceptor/AbstractMethodValidationInterceptor.java
 
----
+### Classes Internas
 
 PersistentBag.java
 
 AbstractPersistentCollection.java
 
-LazyAttributeLoadingInterceptor
+LazyAttributeLoadingInterceptor.java
 
 ---
 
 [org.hib.col.spi.AbstractPersistentCollection] (executor-thread-1) HHH000496: Detaching an uninitialized collection with queued operations from a session: [com.jeanbarcellos.project106.domain.Post.comments#4
 
----
+<br><br>
 
 ## Hibernate
 
@@ -83,6 +83,8 @@ Pode se referir à noção de aplicação de uma Unidade de Trabalho, conforme d
 O Hibernate usa a API JDBC para persistência.
 
 No mundo do Java, há dois mecanismos bem definidos para lidar com transações em JDBC: o próprio JDBC e o JTA. O Hibernate suporta ambos os mecanismos para integração com transações e permite que aplicativos gerenciem transações físicas.
+
+<br>
 
 ## ModelMapper
 
